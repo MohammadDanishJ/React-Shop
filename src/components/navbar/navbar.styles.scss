@@ -1,0 +1,28 @@
+@import '../../styles/colors';
+nav{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 45px;
+    display: flex;
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        background: $white;
+        color: $grey-fade;
+        cursor: pointer;
+        transition: .3s all ease;
+        a:hover{
+            color: $primary-faded;
+        }
+        a.active{
+            color: $primary;
+            font-weight: 800;
+        }
+    }
+}

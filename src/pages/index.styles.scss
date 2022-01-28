@@ -1,0 +1,9 @@
+@import "../styles/colors";
+section{
+    width: 100vw;
+    height: calc(100vh - 45px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $primary-white;
+}
