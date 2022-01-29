@@ -1,7 +1,8 @@
 export const pages = [
     {
         title: 'Home',
-        path: '/home'
+        path: '/home',
+        class: 'active'
     },
     {
         title: 'Profile',

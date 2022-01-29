@@ -1,12 +1,13 @@
-@import '../../styles/colors';
-nav{
+@import "../../styles/colors";
+nav {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100vw;
     height: 45px;
     display: flex;
-    a{
+    a {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -16,13 +17,29 @@ nav{
         background: $white;
         color: $grey-fade;
         cursor: pointer;
-        transition: .3s all ease;
-        a:hover{
-            color: $primary-faded;
-        }
-        a.active{
-            color: $primary;
-            font-weight: 800;
-        }
+        transition: 0.3s all ease;
+    }
+    a:hover {
+        color: $primary-light;
+    }
+    a.active {
+        color: $primary;
+        font-weight: 600;
+    }
+    a::before {
+        content: "";
+        position: absolute;
+        background: $primary;
+        height: 2.5px;
+        width: 0;
+        bottom: 22%;
+        border-radius: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 0.3s all ease;
+    }
+
+    a.active::before {
+        width: 2rem;
     }
 }
