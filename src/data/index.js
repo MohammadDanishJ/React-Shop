@@ -1,3 +1,4 @@
+export const appName = 'Eg Shop';
 export const pages = [
     {
         title: 'Home',
