@@ -5,23 +5,31 @@ import Container from "../../components/container/container.component";
 import tabTitle from "../page";
 import "../index.styles.scss";
 import { shop } from "../../data";
+import './index.styles.scss';
 
 const Home = () => {
     tabTitle(document.location.pathname);
+
+    let minShop = shop.reduce(function (res, obj) {
+        return (obj.rate < res.rate) ? obj : res;
+    });
+
     return (
         <Container>
-            <Banner
-                value={
-                    shop.reduce(function (res, obj) {
-                        return (obj.rate < res.rate) ? obj : res;
-                    })
-                }
-            />
-            {shop.map((item, index) => {
-                return (
-                    <Card key={item.id} value={item}></Card>
-                );
-            })}
+            <Banner value={minShop} />
+            {/* card for min shop */}
+            <div className="fl fl-d-cl shop-container">
+                <h1 className="title">Best Shop</h1>
+                <Card key={minShop.id} value={minShop}></Card>
+            </div>
+            <div className="fl fl-d-cl shop-container">
+                <h1 className="title">All Shops</h1>
+                {shop.map((item, index) => {
+                    return (
+                        <Card key={item.id} value={item}></Card>
+                    );
+                })}
+            </div>
         </Container>
     );
 }
