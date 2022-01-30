@@ -4,7 +4,7 @@ import './container.styles.scss'
 const Container = ({ children }) => {
     return (
         <section>
-            <div className='container'>{children}</div>
+            <div className='container fl fl-d-cl'>{children}</div>
         </section>
     );
 };
