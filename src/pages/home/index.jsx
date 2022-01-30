@@ -10,7 +10,13 @@ const Home = () => {
     tabTitle(document.location.pathname);
     return (
         <Container>
-            <Banner />
+            <Banner
+                value={
+                    shop.reduce(function (res, obj) {
+                        return (obj.rate < res.rate) ? obj : res;
+                    })
+                }
+            />
             {shop.map((item, index) => {
                 return (
                     <Card key={item.id} value={item}></Card>
