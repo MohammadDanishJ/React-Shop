@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from './pages/home';
 import Profile from './pages/profile';
 import Navbar from './components/navbar/navbar.component';
+import Shop from './pages/shop';
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
         <Route path="/" element={<Navigate replace to="/home" />} />
         <Route path='/home' element={<Home />} />
         <Route path='/profile' element={<Profile />} />
+        <Route path='/shop' element={<Shop />} />
+        <Route path='/shop/:sname' element={<Shop />} />
       </Routes>
     </Router>
   );
