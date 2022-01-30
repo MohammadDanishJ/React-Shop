@@ -97,46 +97,47 @@ button,
 
 .fl {
     display: flex;
-    .fl-c {
-        justify-content: center;
-        align-items: center;
-    }
+}
 
-    .fl-j-sb {
-        justify-content: space-between;
-    }
+.fl-c {
+    justify-content: center;
+    align-items: center;
+}
 
-    .fl-j-fs {
-        justify-content: flex-start;
-    }
+.fl-j-sb {
+    justify-content: space-between;
+}
 
-    .fl-j-fe {
-        justify-content: flex-end;
-    }
+.fl-j-fs {
+    justify-content: flex-start;
+}
 
-    .fl-a-fs {
-        align-items: flex-start;
-    }
+.fl-j-fe {
+    justify-content: flex-end;
+}
 
-    .fl-a-fe {
-        align-items: flex-end;
-    }
+.fl-a-fs {
+    align-items: flex-start;
+}
 
-    .fl-d-rw {
-        flex-direction: row;
-    }
+.fl-a-fe {
+    align-items: flex-end;
+}
 
-    .fl-d-rw-rev {
-        flex-direction: row-reverse;
-    }
+.fl-d-rw {
+    flex-direction: row;
+}
 
-    .fl-d-cl {
-        flex-direction: column;
-    }
+.fl-d-rw-rev {
+    flex-direction: row-reverse;
+}
 
-    .fl-ww {
-        flex-wrap: wrap;
-    }
+.fl-d-cl {
+    flex-direction: column;
+}
+
+.fl-ww {
+    flex-wrap: wrap;
 }
 
 .w100 {
