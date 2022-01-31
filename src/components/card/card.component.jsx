@@ -14,7 +14,7 @@ const Card = ({ value }) => {
         <div className="fl fl-d-cl fl-j-sb title lhinit w100">
           <div className="title">{value.name}</div>
           <div className="sub-title fl fl-c fl-j-fs">
-            <div className="svg"><MdLocationPin size={12}/></div>
+            <div className="svg fl"><MdLocationPin size={14}/></div>
             <span>{value.location}</span>
           </div>
           <div className="sub-title rate-title">INR {value.rate}</div>
