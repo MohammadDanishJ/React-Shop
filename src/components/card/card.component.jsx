@@ -2,16 +2,19 @@ import React from 'react';
 import "./card.styles.scss";
 import location from '../../assets/location.svg';
 import { Link } from 'react-router-dom';
+import banner from '../../assets/banner.webp';
 
 const Card = ({ value }) => {
   return (
     <Link to={`/shop/${value.id}`}>
       <div id={value.id} className="card fl fl-j-fs w100">
-        <div className="fl img"></div>
+        <div className="fl img">
+          <img className="img" src={banner} alt="shop image" />
+        </div>
         <div className="fl fl-d-cl fl-j-sb title lhinit w100">
           <div className="title">{value.name}</div>
           <div className="sub-title fl fl-c fl-j-fs">
-            <img src={location} alt="" />
+            <div className="svg"></div>
             <span>{value.location}</span>
           </div>
           <div className="sub-title rate-title">INR {value.rate}</div>
