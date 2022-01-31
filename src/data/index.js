@@ -1,5 +1,3 @@
-import {RiHome4Line, RiNotification4Line} from 'react-icons/ri';
-import {CgShoppingCart, CgProfile} from 'react-icons/cg';
 import home from '../assets/icons/home.svg';
 import cart from '../assets/icons/cart.svg';
 import notification from '../assets/icons/notification.svg';
