@@ -12,7 +12,9 @@ $black: #000000;
 $green: #0b735f;
 $redGrad1: #f95415;
 $redGrad2: #fe6f42;
-$svgPrimaryFilter: invert(82%) sepia(43%) saturate(1105%) hue-rotate(325deg) brightness(101%) contrast(91%);
+$filterPrimary: invert(82%) sepia(43%) saturate(1105%) hue-rotate(325deg) brightness(101%) contrast(91%);
+$filterGrey4: invert(79%) sepia(3%) saturate(185%) hue-rotate(169deg) brightness(89%) contrast(83%);
+$filterRedGrad2: invert(77%) sepia(51%) saturate(7027%) hue-rotate(333deg) brightness(102%) contrast(99%);
 
 // width variable
 $maxWidth: 600px;

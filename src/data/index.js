@@ -1,5 +1,9 @@
 import {RiHome4Line, RiNotification4Line} from 'react-icons/ri';
 import {CgShoppingCart, CgProfile} from 'react-icons/cg';
+import home from '../assets/icons/home.svg';
+import cart from '../assets/icons/cart.svg';
+import notification from '../assets/icons/notification.svg';
+import profile from '../assets/icons/profile.svg';
 
 export const appName = 'Eg Shop';
 
@@ -7,22 +11,22 @@ export const pages = [
     {
         title: 'Home',
         path: '/home',
-        icon: <RiHome4Line size={24}/>,
+        icon: <img src={home} />,
     },
     {
         title: 'Cart',
         path: '/cart',
-        icon: <CgShoppingCart size={24}/>,
+        icon: <img src={cart} />,
     },
     {
         title: 'Notifications',
         path: '/notifications',
-        icon: <RiNotification4Line size={24}/>,
+        icon: <img src={notification} />,
     },
     {
         title: 'Profile',
         path: '/profile',
-        icon: <CgProfile size={24}/>,
+        icon: <img src={profile} />,
     },
 ]
 

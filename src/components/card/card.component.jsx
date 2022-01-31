@@ -2,7 +2,7 @@ import React from 'react';
 import "./card.styles.scss";
 import { Link } from 'react-router-dom';
 import banner from '../../assets/banner.webp';
-import { MdLocationPin } from 'react-icons/md';
+import location from '../../assets/icons/location.svg';
 
 const Card = ({ value }) => {
   return (
@@ -14,7 +14,7 @@ const Card = ({ value }) => {
         <div className="fl fl-d-cl fl-j-sb title lhinit w100">
           <div className="title">{value.name}</div>
           <div className="sub-title fl fl-c fl-j-fs">
-            <div className="svg fl"><MdLocationPin size={14}/></div>
+            <div className="svg fl"><img src={location} alt="location icon" /></div>
             <span>{value.location}</span>
           </div>
           <div className="sub-title rate-title">INR {value.rate}</div>

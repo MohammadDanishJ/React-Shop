@@ -24,10 +24,16 @@ nav {
         color: $grey4;
         cursor: pointer;
         transition: 0.3s all ease;
+        img{
+            filter: $filterGrey4;
+        }
     }
     a.active {
         color: $primary;
         font-weight: 600;
+        img{
+            filter: $filterPrimary;
+        }
     }
     a::before {
         content: "";
