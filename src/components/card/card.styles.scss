@@ -28,7 +28,7 @@
         }
         .sub-title {
             font-size: 12px;
-            color: $grey-fade;
+            color: $grey1;
             .svg {
                 background: url("../../assets/location.svg");
                 height: 12px;
@@ -36,7 +36,7 @@
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
-                filter: invert(47%) sepia(91%) saturate(2548%) hue-rotate(198deg) brightness(99%) contrast(105%);
+                filter: $svgPrimaryFilter;
             }
             span {
                 padding-left: 0.2rem;

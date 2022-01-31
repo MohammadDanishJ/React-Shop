@@ -16,12 +16,9 @@ nav {
         width: 100%;
         text-align: center;
         background: $white;
-        color: $grey-fade;
+        color: $grey1;
         cursor: pointer;
         transition: 0.3s all ease;
-    }
-    a:hover {
-        color: $primary-light;
     }
     a.active {
         color: $primary;
@@ -40,7 +37,14 @@ nav {
         transition: 0.3s all ease;
     }
 
+    a:hover::before {
+        background: $grey1;
+        width: 1rem;
+    }
+    // a.active:hover::before {
+    // }
     a.active::before {
         width: 2rem;
+        background: $primary;
     }
 }
