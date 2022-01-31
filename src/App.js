@@ -3,6 +3,7 @@ import Home from './pages/home';
 import Profile from './pages/profile';
 import Navbar from './components/navbar/navbar.component';
 import Shop from './pages/shop';
+import Search from './pages/search';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/shop' element={<Shop />} />
         <Route path='/shop/:sname' element={<Shop />} />
+        <Route path='/search' element={<Search/>} />
       </Routes>
     </Router>
   );

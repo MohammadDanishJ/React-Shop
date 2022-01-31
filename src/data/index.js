@@ -5,6 +5,10 @@ export const pages = [
         path: '/home',
     },
     {
+        title: 'Search',
+        path: '/search'
+    },
+    {
         title: 'Profile',
         path: '/profile'
     },
