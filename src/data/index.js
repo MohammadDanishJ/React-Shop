@@ -9,6 +9,10 @@ export const pages = [
         path: '/cart'
     },
     {
+        title: 'Notifications',
+        path: '/notifications'
+    },
+    {
         title: 'Profile',
         path: '/profile'
     },

@@ -4,6 +4,7 @@ import Profile from './pages/profile';
 import Navbar from './components/navbar/navbar.component';
 import Shop from './pages/shop';
 import Cart from './pages/cart';
+import Notifications from './pages/notifications';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/shop' element={<Shop />} />
         <Route path='/shop/:sname' element={<Shop />} />
         <Route path='/cart' element={<Cart/>} />
+        <Route path='/notifications' element={<Notifications/>} />
       </Routes>
     </Router>
   );
