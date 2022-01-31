@@ -1,12 +1,12 @@
 import React from 'react';
 import Container from '../../components/container/container.component';
 
-const Search = () => {
+const Cart = () => {
     return (
         <Container>
-            <div>Search here</div>
+            <div>Your Cart is Empty</div>
         </Container>
     );
 };
 
-export default Search;
+export default Cart;

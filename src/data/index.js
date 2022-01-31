@@ -5,8 +5,8 @@ export const pages = [
         path: '/home',
     },
     {
-        title: 'Search',
-        path: '/search'
+        title: 'Cart',
+        path: '/cart'
     },
     {
         title: 'Profile',
