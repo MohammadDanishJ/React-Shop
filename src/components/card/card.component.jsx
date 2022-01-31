@@ -9,7 +9,7 @@ const Card = ({ value }) => {
     <Link to={`/shop/${value.id}`}>
       <div id={value.id} className="card fl fl-j-fs w100">
         <div className="fl img">
-          <img className="img" src={banner} alt="shop image" />
+          <img className="img" src={banner} alt="shop banner" />
         </div>
         <div className="fl fl-d-cl fl-j-sb title lhinit w100">
           <div className="title">{value.name}</div>
