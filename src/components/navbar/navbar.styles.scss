@@ -7,6 +7,11 @@ nav {
     height: 45px;
     display: flex;
     z-index: 1;
+    .nav {
+        width: 100%;
+        max-width: $maxWidth;
+        border-top: 1px solid $grey3;
+    }
     a {
         position: relative;
         display: flex;
@@ -16,7 +21,7 @@ nav {
         width: 100%;
         text-align: center;
         background: $white;
-        color: $grey1;
+        color: $grey4;
         cursor: pointer;
         transition: 0.3s all ease;
     }

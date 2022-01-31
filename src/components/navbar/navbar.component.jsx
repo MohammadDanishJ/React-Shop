@@ -5,12 +5,14 @@ import "./navbar.styles.scss";
 
 const Navbar = () => {
     return (
-        <nav>
-            {pages.map((item, index) => {
-                return (
-                    <NavLink key={index} to={item.path}>{item.title}</NavLink>
-                );
-            })}
+        <nav className='fl fl-c'>
+            <div className="nav fl h100">
+                {pages.map((item, index) => {
+                    return (
+                        <NavLink key={index} to={item.path}>{item.title}</NavLink>
+                    );
+                })}
+            </div>
         </nav>
     );
 };

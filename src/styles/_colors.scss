@@ -5,6 +5,7 @@ $primary-faded: #f3ae462c;
 $grey1: #2a3037;
 $grey2: #c6c9cc;
 $grey3: #dfe2e5;
+$grey4: #aaacae;
 $white: #ffffff;
 $white2: #fcfcfc;
 $black: #000000;
@@ -12,3 +13,6 @@ $green: #0b735f;
 $redGrad1: #f95415;
 $redGrad2: #fe6f42;
 $svgPrimaryFilter: invert(82%) sepia(43%) saturate(1105%) hue-rotate(325deg) brightness(101%) contrast(91%);
+
+// width variable
+$maxWidth: 600px;
