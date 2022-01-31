@@ -9,7 +9,7 @@ const Navbar = () => {
             <div className="nav fl h100">
                 {pages.map((item, index) => {
                     return (
-                        <NavLink key={index} to={item.path}>{item.title}</NavLink>
+                        <NavLink key={index} to={item.path}>{item.icon}</NavLink>
                     );
                 })}
             </div>

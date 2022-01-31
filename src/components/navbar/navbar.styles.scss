@@ -35,21 +35,15 @@ nav {
         background: $primary;
         height: 2.5px;
         width: 0;
-        bottom: 22%;
+        bottom: 5px;
         border-radius: 20px;
         left: 50%;
         transform: translateX(-50%);
         transition: 0.3s all ease;
     }
 
-    a:hover::before {
-        background: $grey1;
-        width: 1rem;
-    }
-    // a.active:hover::before {
-    // }
     a.active::before {
-        width: 2rem;
+        width: 1rem;
         background: $primary;
     }
 }

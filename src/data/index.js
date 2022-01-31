@@ -1,22 +1,31 @@
+import {RiHome4Line, RiNotification4Line} from 'react-icons/ri';
+import {CgShoppingCart, CgProfile} from 'react-icons/cg';
+
 export const appName = 'Eg Shop';
+
 export const pages = [
     {
         title: 'Home',
         path: '/home',
+        icon: <RiHome4Line size={24}/>,
     },
     {
         title: 'Cart',
-        path: '/cart'
+        path: '/cart',
+        icon: <CgShoppingCart size={24}/>,
     },
     {
         title: 'Notifications',
-        path: '/notifications'
+        path: '/notifications',
+        icon: <RiNotification4Line size={24}/>,
     },
     {
         title: 'Profile',
-        path: '/profile'
+        path: '/profile',
+        icon: <CgProfile size={24}/>,
     },
 ]
+
 export const shop = [
     {
         id: 11,
