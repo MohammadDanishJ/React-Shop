@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Container from '../../components/container/container.component';
 import { shop } from '../../data';
+import tabTitle from '../page';
 
 function findShop(arr, value) {
     const element = arr.find((el) => {
@@ -15,6 +16,8 @@ const Shop = () => {
 
     // check if shop exists
     const [shopFound, Shop] = findShop(shop, sname)
+
+    sname ?  shopFound ? tabTitle(document.location.pathname, Shop.name) : tabTitle(document.location.pathname, 'Not Found')  : tabTitle(document.location.pathname, 'Shop') 
 
     return (
         <Container>
