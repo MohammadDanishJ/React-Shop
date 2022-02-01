@@ -6,6 +6,7 @@ import tabTitle from "../page";
 import "../index.styles.scss";
 import { shop } from "../../data";
 import './index.styles.scss';
+import Search from "../../components/search/search.component";
 
 const Home = () => {
     tabTitle(document.location.pathname);
@@ -16,6 +17,7 @@ const Home = () => {
 
     return (
         <Container>
+            <Search placeholder='Search Shops, Products' data={shop}></Search>
             <Banner value={minShop} />
             {/* card for min shop */}
             <div className="fl fl-d-cl shop-container">
