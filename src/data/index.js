@@ -9,22 +9,22 @@ export const pages = [
     {
         title: 'Home',
         path: '/home',
-        icon: <img src={home} />,
+        icon: <img src={home} alt='Home Icon'/>,
     },
     {
         title: 'Cart',
         path: '/cart',
-        icon: <img src={cart} />,
+        icon: <img src={cart} alt='Cart Icon'/>,
     },
     {
         title: 'Notifications',
         path: '/notifications',
-        icon: <img src={notification} />,
+        icon: <img src={notification} alt='Notification Icon'/>,
     },
     {
         title: 'Profile',
         path: '/profile',
-        icon: <img src={profile} />,
+        icon: <img src={profile} alt='Profile Icon'/>,
     },
 ]
 
