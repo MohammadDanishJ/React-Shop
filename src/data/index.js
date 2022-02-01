@@ -31,22 +31,22 @@ export const pages = [
 export const shop = [
     {
         id: 11,
-        name: 'Shop 1',
+        name: 'YTES',
         location: 'location 1',
         rate: 110
     }, {
         id: 12,
-        name: 'Shop 2',
+        name: 'FTES',
         location: 'location 2',
         rate: 120
     }, {
         id: 13,
-        name: 'Shop 3',
+        name: 'AES',
         location: 'location 3',
         rate: 105
     }, {
         id: 14,
-        name: 'Shop 4',
+        name: 'MES',
         location: 'location 4',
         rate: 140
     },
