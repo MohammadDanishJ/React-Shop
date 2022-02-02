@@ -12,7 +12,7 @@ const Banner = ({value}) => {
                     <h1 className="banner-text text-center lhinit">
                         1 Unit&nbsp;<span id="lRate">INR {value.rate}</span>
                     </h1>
-                    <p>{value.id} {value.name} {value.location}</p>
+                    <div className='data'>{value.id} {value.name} {value.location}</div>
                 </div>
             </div>
         </div>
