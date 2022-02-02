@@ -15,14 +15,15 @@ const Home = () => {
     tabTitle(document.location.pathname);
 
     const [shopState, setShop] = useState([]);
-    const shopRef = collection(db, 'shop')
+    const shopRef = collection(db, 'shop');
     useEffect(() => {
         const getShop = async () => {
             const data = await getDocs(shopRef);
-            setShop(data.docs.map((doc)=>({...doc.data(), id: doc.id})));
+            setShop(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
         }
 
         getShop()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 
@@ -30,7 +31,6 @@ const Home = () => {
         return (obj.rate < res.rate) ? obj : res;
     });
 
-    console.log(shopState);
 
     return (
         <Container>
