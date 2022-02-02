@@ -37,6 +37,10 @@
                 background-repeat: no-repeat;
                 // filter: $svgPrimaryFilter;
                 filter: $filterRedGrad2;
+                img{
+                    height: 14px;
+                    width: 14px;
+                }
             }
             span {
                 padding-left: 0.2rem;

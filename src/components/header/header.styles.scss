@@ -1,0 +1,41 @@
+@import "../../styles/colors";
+.header {
+    padding-bottom: 0.6rem;
+    .main {
+        padding-bottom: 0.2rem;
+            height: 45px;
+        .logo {
+            font-weight: 600;
+            font-size: 20px;
+            .logoPrimary {
+                padding: .1rem 0;
+                border-radius: 10px;
+                background: $primary;
+                color: $white;
+                width: 45px;
+            }
+            .logoSecondary {
+                padding-left: 0.2rem;
+                color: $primary;
+            }
+        }
+
+        .location {
+            padding-right: 0.5rem;
+            img {
+                filter: $filterGrey4;
+            }
+            .deliver {
+                padding-left: 0.2rem;
+                .title {
+                    font-weight: 600;
+                    color: $grey1;
+                }
+                .add {
+                    color: $grey4;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

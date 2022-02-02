@@ -1,12 +1,13 @@
 @import "../../styles/colors";
 .search-box {
-    padding: 0.4rem 0;
+    padding: 0.3rem 0 .4rem;
     z-index: 1;
     input {
         background: $grey3;
         color: $grey1;
         border-radius: 10px;
         caret-color: $green;
+        font-size: 16px;
     }
     .hasSearchWord {
         border-radius: 10px 10px 0 0;
