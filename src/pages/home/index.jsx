@@ -15,42 +15,55 @@ const Home = () => {
     tabTitle(document.location.pathname);
 
     const [shopState, setShop] = useState([]);
+    const [minShop, setMinShop] = useState([]);
+    const [isLoading, setisLoading] = useState(true);
+    
     const shopRef = collection(db, 'shop');
+
     useEffect(() => {
         const getShop = async () => {
             const data = await getDocs(shopRef);
             setShop(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+            setisLoading(false)
         }
 
         getShop()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-
-    let minShop = shop.reduce(function (res, obj) {
-        return (obj.rate < res.rate) ? obj : res;
-    });
-
+    useEffect(() => {
+        if (!isLoading) {
+            let temp = shopState.reduce((res, obj) => {
+                return (obj.rate < res.rate) ? obj : res;
+            });
+            setMinShop(temp)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isLoading]);
 
     return (
         <Container>
             <Header>
                 <Search placeholder='Search Shops, Products' data={shop}></Search>
             </Header>
-
-            <Banner value={minShop} />
+            <Banner value={minShop} isLoading={isLoading} />
             {/* card for min shop */}
             <div className="fl fl-d-cl shop-container">
                 <h1 className="title">Best Shop</h1>
-                <Card key={minShop.id} value={minShop}></Card>
+                {
+                    !isLoading ? <Card key={minShop.id} value={minShop}></Card> : <div>Loading</div>
+                }
+
             </div>
             <div className="fl fl-d-cl shop-container">
                 <h1 className="title">All Shops</h1>
-                {shopState.map((item, index) => {
-                    return (
-                        <Card key={item.id} value={item}></Card>
-                    );
-                })}
+                {
+                    !isLoading ?
+                        shopState.map((item, index) => {
+                            return <Card key={item.id} value={item}></Card>;
+                        })
+                        : <div>Loading</div>
+                }
             </div>
         </Container>
     );
