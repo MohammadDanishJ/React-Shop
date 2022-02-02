@@ -33,7 +33,7 @@ export const shop = [
         id: 11,
         name: 'YTES',
         location: 'location 1',
-        rate: 110
+        rate: 100
     }, {
         id: 12,
         name: 'FTES',
