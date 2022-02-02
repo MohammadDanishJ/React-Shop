@@ -31,7 +31,7 @@ const Search = ({ placeholder, data }) => {
       <div className="pabs dataResult w100">
         {
           // 20 best matches
-          (filteredData.length != 0) ? (
+          (filteredData.length !== 0) ? (
             <div className='fl fl-d-cl w100'>
               {filteredData.slice(0, 20).map((value, key) => {
                 return <a className='w100 p12h' key={key} href={`/shop/${value.id}`}>{value.name}</a>

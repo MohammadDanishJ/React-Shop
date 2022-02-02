@@ -1,6 +1,5 @@
 import React from 'react';
 import './header.styles.scss';
-import logo from '../../assets/logo512.png';
 import location from '../../assets/icons/location.svg';
 
 const Header = ({ children }) => {
