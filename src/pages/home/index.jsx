@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "../../components/banner/banner.component";
 import Card from "../../components/card/card.component";
 import Container from "../../components/container/container.component";
@@ -8,13 +8,29 @@ import { shop } from "../../data";
 import './index.styles.scss';
 import Search from "../../components/search/search.component";
 import Header from "../../components/header/header.component";
+import { db } from "../../firebase/firebaseUtils";
+import { collection, getDocs } from 'firebase/firestore';
 
 const Home = () => {
     tabTitle(document.location.pathname);
 
+    const [shopState, setShop] = useState([]);
+    const shopRef = collection(db, 'shop')
+    useEffect(() => {
+        const getShop = async () => {
+            const data = await getDocs(shopRef);
+            setShop(data.docs.map((doc)=>({...doc.data(), id: doc.id})));
+        }
+
+        getShop()
+    }, []);
+
+
     let minShop = shop.reduce(function (res, obj) {
         return (obj.rate < res.rate) ? obj : res;
     });
+
+    console.log(shopState);
 
     return (
         <Container>
@@ -30,7 +46,7 @@ const Home = () => {
             </div>
             <div className="fl fl-d-cl shop-container">
                 <h1 className="title">All Shops</h1>
-                {shop.map((item, index) => {
+                {shopState.map((item, index) => {
                     return (
                         <Card key={item.id} value={item}></Card>
                     );
