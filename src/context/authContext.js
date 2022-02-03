@@ -11,7 +11,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
 
     const [currentUser, setCurrentUser] = useState();
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
     const [isUser, setIsUser] = useState(false);
 
     const login = () => {
@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
                 console.log(user)
                 setCurrentUser(user)
                 setIsUser(true)
-                setLoading(false)
+                // setLoading(false)
                 // setIsAuth(true)
                 // ...
             } else {
