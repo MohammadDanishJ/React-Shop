@@ -7,7 +7,7 @@ import { useAuth } from '../../context/authContext';
 
 const Header = ({ isAuth, setIsAuth, children }) => {
     const [error, setError] = useState('')
-    const { login, currentUser } = useAuth();
+    const { login, isUser, currentUser } = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -19,7 +19,7 @@ const Header = ({ isAuth, setIsAuth, children }) => {
         }
     }
 
-    !!error ? console.log(error):console.log('auth executed');
+    !!error && console.log(error);
 
     return (
         <div className="header">
@@ -30,7 +30,7 @@ const Header = ({ isAuth, setIsAuth, children }) => {
                     <div className="logoSecondary fl fl-c">Shop</div>
                 </div>
                 <div className='location fl fl-c fl-j-fs '>
-                    {currentUser ?
+                    {isUser ?
                         <>
                             <img src={location} alt="" />
                             <div className="deliver w100 lhinit">

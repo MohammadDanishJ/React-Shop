@@ -12,6 +12,7 @@ export const AuthProvider = ({ children }) => {
 
     const [currentUser, setCurrentUser] = useState();
     const [loading, setLoading] = useState(true);
+    const [isUser, setIsUser] = useState(false);
 
     const login = () => {
         return signInWithPopup(auth, provider);
@@ -24,6 +25,7 @@ export const AuthProvider = ({ children }) => {
                 // const uid = user.uid;
                 console.log(user)
                 setCurrentUser(user)
+                setIsUser(true)
                 setLoading(false)
                 // setIsAuth(true)
                 // ...
@@ -31,6 +33,8 @@ export const AuthProvider = ({ children }) => {
                 // User is signed out
                 // ...
                 setCurrentUser([])
+                setIsUser(false)
+                console.log('no USer')
                 // setIsAuth(false)
             }
         });
@@ -39,12 +43,13 @@ export const AuthProvider = ({ children }) => {
 
     const value = {
         currentUser,
+        isUser,
         login
     }
 
     return (
         <AuthContext.Provider value={value}>
-            {!loading && children}
+            {children}
         </AuthContext.Provider>
     );
 };
