@@ -9,7 +9,7 @@ import './index.styles.scss';
 import Search from "../../components/search/search.component";
 import Header from "../../components/header/header.component";
 import { db } from "../../firebase/firebaseUtils";
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, onSnapshot } from 'firebase/firestore';
 
 const Home = () => {
     tabTitle(document.location.pathname);
@@ -17,29 +17,30 @@ const Home = () => {
     const [shopState, setShop] = useState([]);
     const [minShop, setMinShop] = useState([]);
     const [isLoading, setisLoading] = useState(true);
-    
+
     const shopRef = collection(db, 'shop');
 
     useEffect(() => {
         const getShop = async () => {
-            const data = await getDocs(shopRef);
-            setShop(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-            setisLoading(false)
+            const observer = onSnapshot(shopRef, data => {
+                // console.log(`Received doc snapshot: ${docSnapshot}`);
+                let temp = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+                console.log(temp)
+                setShop(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+                setisLoading(false)
+
+                let tempMin = temp.reduce((res, obj) => {
+                    return (obj.rate < res.rate) ? obj : res;
+                });
+                setMinShop(tempMin)
+            }, err => {
+                console.log(`Encountered error: ${err}`);
+            });
         }
 
         getShop()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
-    useEffect(() => {
-        if (!isLoading) {
-            let temp = shopState.reduce((res, obj) => {
-                return (obj.rate < res.rate) ? obj : res;
-            });
-            setMinShop(temp)
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [isLoading]);
 
     return (
         <Container>
