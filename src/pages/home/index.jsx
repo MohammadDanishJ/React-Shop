@@ -9,42 +9,41 @@ import './index.styles.scss';
 import Search from "../../components/search/search.component";
 import Header from "../../components/header/header.component";
 import { db } from "../../firebase/firebaseUtils";
-import { collection, onSnapshot } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 
-const Home = () => {
+const Home = ({isAuth, setIsAuth}) => {
     tabTitle(document.location.pathname);
 
     const [shopState, setShop] = useState([]);
     const [minShop, setMinShop] = useState([]);
     const [isLoading, setisLoading] = useState(true);
-
+    
     const shopRef = collection(db, 'shop');
 
     useEffect(() => {
         const getShop = async () => {
-            const observer = onSnapshot(shopRef, data => {
-                // console.log(`Received doc snapshot: ${docSnapshot}`);
-                let temp = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-                console.log(temp)
-                setShop(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-                setisLoading(false)
-
-                let tempMin = temp.reduce((res, obj) => {
-                    return (obj.rate < res.rate) ? obj : res;
-                });
-                setMinShop(tempMin)
-            }, err => {
-                console.log(`Encountered error: ${err}`);
-            });
+            const data = await getDocs(shopRef);
+            setShop(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+            setisLoading(false)
         }
 
         getShop()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    useEffect(() => {
+        if (!isLoading) {
+            let temp = shopState.reduce((res, obj) => {
+                return (obj.rate < res.rate) ? obj : res;
+            });
+            setMinShop(temp)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isLoading]);
+
     return (
         <Container>
-            <Header>
+            <Header isAuth={isAuth} setIsAuth={setIsAuth}>
                 <Search placeholder='Search Shops, Products' data={shop}></Search>
             </Header>
             <Banner value={minShop} isLoading={isLoading} />
@@ -52,7 +51,7 @@ const Home = () => {
             <div className="fl fl-d-cl shop-container">
                 <h1 className="title">Best Shop</h1>
                 {
-                    !isLoading ? <Card key={minShop.id} value={minShop}></Card> : <div>Loading</div>
+                    !isLoading ? <Card key={minShop.id} value={minShop} isAuth={isAuth}></Card> : <div>Loading</div>
                 }
 
             </div>
@@ -61,7 +60,7 @@ const Home = () => {
                 {
                     !isLoading ?
                         shopState.map((item, index) => {
-                            return <Card key={item.id} value={item}></Card>;
+                            return <Card key={item.id} value={item} isAuth={isAuth}></Card>;
                         })
                         : <div>Loading</div>
                 }
