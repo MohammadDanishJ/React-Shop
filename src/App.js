@@ -10,7 +10,7 @@ import { AuthProvider } from './context/authContext';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
-  const [userInfo, setuserInfo] = useState([]);
+  // const [userInfo, setuserInfo] = useState([]);
   return (
     <Router>
       <AuthProvider>

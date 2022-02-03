@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './header.styles.scss';
 import location from '../../assets/icons/location.svg';
-import { auth, provider } from '../../firebase/firebaseUtils';
-import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
+// import { auth, provider } from '../../firebase/firebaseUtils';
+// import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
 import { useAuth } from '../../context/authContext';
 
 const Header = ({ isAuth, setIsAuth, children }) => {
@@ -18,6 +18,8 @@ const Header = ({ isAuth, setIsAuth, children }) => {
             setError(err)
         }
     }
+
+    error ? console.log(error):'';
 
     return (
         <div className="header">
