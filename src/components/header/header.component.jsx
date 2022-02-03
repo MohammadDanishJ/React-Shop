@@ -19,7 +19,7 @@ const Header = ({ isAuth, setIsAuth, children }) => {
         }
     }
 
-    error ? console.log(error):'';
+    !!error ? console.log(error):console.log('auth executed');
 
     return (
         <div className="header">
