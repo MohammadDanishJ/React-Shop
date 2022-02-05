@@ -1,30 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './header.styles.scss';
 import location from '../../assets/icons/location.svg';
-// import { auth, provider } from '../../firebase/firebaseUtils';
-// import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
 import { useAuth } from '../../context/authContext';
+import { useNavigate } from 'react-router-dom';
 
-const Header = ({ isAuth, setIsAuth, children }) => {
-    const [error, setError] = useState('')
-    const { login, isUser, currentUser } = useAuth();
+const Header = ({ children }) => {
+    const { isUser, currentUser } = useAuth();
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            setError('')
-            login();
-        } catch (err) {
-            setError(err)
-        }
+        navigate('/login')
     }
 
-    !!error && console.log(error);
 
     return (
         <div className="header">
             <div className="main fl fl-j-sb">
-                {JSON.stringify(currentUser && currentUser.name)}
                 <div className="logo fl fl-c" >
                     <div className="logoPrimary fl fl-c">Eg</div>
                     <div className="logoSecondary fl fl-c">Shop</div>
@@ -32,6 +24,7 @@ const Header = ({ isAuth, setIsAuth, children }) => {
                 <div className='location fl fl-c fl-j-fs '>
                     {isUser ?
                         <>
+                        {console.log(currentUser.displayName || currentUser.email)}
                             <img src={location} alt="" />
                             <div className="deliver w100 lhinit">
 

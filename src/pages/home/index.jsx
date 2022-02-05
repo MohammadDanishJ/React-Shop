@@ -11,7 +11,7 @@ import Header from "../../components/header/header.component";
 import { db } from "../../firebase/firebaseUtils";
 import { collection, getDocs } from 'firebase/firestore';
 
-const Home = ({isAuth, setIsAuth}) => {
+const Home = () => {
     tabTitle(document.location.pathname);
 
     const [shopState, setShop] = useState([]);
@@ -43,7 +43,7 @@ const Home = ({isAuth, setIsAuth}) => {
 
     return (
         <Container>
-            <Header isAuth={isAuth} setIsAuth={setIsAuth}>
+            <Header>
                 <Search placeholder='Search Shops, Products' data={shop}></Search>
             </Header>
             <Banner value={minShop} isLoading={isLoading} />
@@ -51,7 +51,7 @@ const Home = ({isAuth, setIsAuth}) => {
             <div className="fl fl-d-cl shop-container">
                 <h1 className="title">Best Shop</h1>
                 {
-                    !isLoading ? <Card key={minShop.id} value={minShop} isAuth={isAuth}></Card> : <div>Loading</div>
+                    !isLoading ? <Card key={minShop.id} value={minShop}></Card> : <div>Loading</div>
                 }
 
             </div>
@@ -60,7 +60,7 @@ const Home = ({isAuth, setIsAuth}) => {
                 {
                     !isLoading ?
                         shopState.map((item, index) => {
-                            return <Card key={item.id} value={item} isAuth={isAuth}></Card>;
+                            return <Card key={item.id} value={item}></Card>;
                         })
                         : <div>Loading</div>
                 }

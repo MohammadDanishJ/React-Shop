@@ -65,7 +65,7 @@ main {
 
 a,
 a:hover {
-    color: inherit;
+    color: $primary-link;
     text-decoration: none !important;
 }
 
@@ -76,12 +76,37 @@ textarea {
     background-color: inherit;
     outline: none;
     overflow: hidden;
+    caret-color: $green;
 }
 
 input,
 textarea,
 button {
     color: #c1c1c1;
+}
+
+button {
+    cursor: pointer;
+}
+
+.btn-primary{
+    background: #006eff;
+    color: $white;
+}
+
+.btn-primary:hover{
+    background: #006effd7;
+    color: $white;
+    
+}
+.btn-primary:focus{
+    background: #006effe0;
+    color: $white;
+    
+}
+
+button:disabled {
+    cursor: not-allowed;
 }
 
 img {
