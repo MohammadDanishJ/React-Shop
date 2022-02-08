@@ -4,7 +4,7 @@ import tabTitle from "../page";
 import { useAuth } from '../../context/authContext';
 import '../index.styles.scss';
 import './index.styles.scss';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Profile() {
   tabTitle(document.location.pathname);
@@ -19,7 +19,6 @@ function Profile() {
 
   return (
     <Container>
-      <h1 className="w100 text-center">Profile</h1>
       {isUser ? (
         <>
           <div>User Found: {currentUser.displayName}</div>
@@ -27,7 +26,7 @@ function Profile() {
         </>
       ) : (
         <>
-          <div>No USer Found</div>
+          <div className='fl fl-c fl-d-cl p12 w100 h100vh'><div>You're not logged In</div><div><Link to='/login'>log In</Link> to see your <strong>Profile</strong></div></div>
         </>
       )}
     </Container>
