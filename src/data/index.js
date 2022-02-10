@@ -51,3 +51,10 @@ export const shop = [
         rate: 140
     },
 ]
+
+export const nullShop = [{
+    id: null,
+    name: 'Offline',
+    location: 'Offline',
+    rate: '000'
+}];

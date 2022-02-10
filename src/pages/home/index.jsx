@@ -4,7 +4,7 @@ import Card from "../../components/card/card.component";
 import Container from "../../components/container/container.component";
 import tabTitle from "../page";
 import "../index.styles.scss";
-import { shop } from "../../data";
+import { nullShop, shop } from "../../data";
 import './index.styles.scss';
 import Search from "../../components/search/search.component";
 import Header from "../../components/header/header.component";
@@ -23,9 +23,20 @@ const Home = () => {
 
     useEffect(() => {
         const getShop = async () => {
-            const data = await getDocs(shopRef);
-            setShop(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-            setisLoading(false)
+            getDocs(shopRef).then((data => {
+                if (!data.empty) {
+                    setShop(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+                    setisLoading(false)
+                } else {
+                    setShop(nullShop)
+                    setisLoading(false)
+                }
+            })).catch(e => {
+                setShop(nullShop)
+                setisLoading(false)
+                console.log(e)
+            });
+
         }
 
         getShop()
@@ -34,10 +45,16 @@ const Home = () => {
 
     useEffect(() => {
         if (!isLoading) {
-            let temp = shopState.reduce((res, obj) => {
-                return (obj.rate < res.rate) ? obj : res;
-            });
-            setMinShop(temp)
+            try {
+                let temp = shopState.reduce((res, obj) => {
+                    return (obj.rate < res.rate) ? obj : res;
+                });
+                setMinShop(temp)
+            } catch (e) {
+                
+                setMinShop(nullShop[0])
+                console.log(e)
+            }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isLoading]);
