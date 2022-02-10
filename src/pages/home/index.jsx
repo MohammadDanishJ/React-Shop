@@ -10,6 +10,7 @@ import Search from "../../components/search/search.component";
 import Header from "../../components/header/header.component";
 import { db } from "../../firebase/firebaseUtils";
 import { collection, getDocs } from 'firebase/firestore';
+import UserLoader from "../../components/loader";
 
 const Home = () => {
     tabTitle(document.location.pathname);
@@ -17,7 +18,7 @@ const Home = () => {
     const [shopState, setShop] = useState([]);
     const [minShop, setMinShop] = useState([]);
     const [isLoading, setisLoading] = useState(true);
-    
+
     const shopRef = collection(db, 'shop');
 
     useEffect(() => {
@@ -51,7 +52,7 @@ const Home = () => {
             <div className="fl fl-d-cl shop-container">
                 <h1 className="title">Best Shop</h1>
                 {
-                    !isLoading ? <Card key={minShop.id} value={minShop}></Card> : <div>Loading</div>
+                    !isLoading ? <Card key={minShop.id} value={minShop}></Card> : <UserLoader />
                 }
 
             </div>
@@ -62,7 +63,7 @@ const Home = () => {
                         shopState.map((item, index) => {
                             return <Card key={item.id} value={item}></Card>;
                         })
-                        : <div>Loading</div>
+                        : (<><UserLoader /><UserLoader /><UserLoader /></>)
                 }
             </div>
         </Container>

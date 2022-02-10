@@ -1,0 +1,63 @@
+@import "../../styles/colors";
+.user-header {
+    margin: .2rem 0;
+}
+
+.user-header .info {
+    float: left;
+}
+
+.user-header .avatar-skeleton {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin: 0 10px 0 0;
+    background: #e9ebec;
+    border-radius: 30px;
+}
+.user-header .info-skeleton {
+    float: left;
+    margin: 2px 0 0 0;
+}
+.user-header .skeleton-1 {
+    display: block;
+    width: 150px;
+    height: 14px;
+    margin: 0 0 5px 0;
+    background: #e9ebec;
+    border-radius: 4px;
+}
+.user-header .skeleton-2 {
+    display: block;
+    width: 80px;
+    height: 14px;
+    margin: 0 0 5px 0;
+    background: #e9ebec;
+    border-radius: 4px;
+}
+.user-header .skeleton-3 {
+    display: block;
+    width: 100px;
+    height: 14px;
+    margin: 0 0 5px 0;
+    background: #e9ebec;
+    border-radius: 4px;
+}
+.user-header .avatar-skeleton,
+.user-header .skeleton-1,
+.user-header .skeleton-2,
+.user-header .skeleton-3 {
+    animation: loading 1s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-color: $grey2;
+    }
+    50% {
+        background-color: $grey4;
+    }
+    100% {
+        background-color: $grey2;
+    }
+}
