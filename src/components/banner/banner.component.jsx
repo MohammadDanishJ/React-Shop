@@ -13,7 +13,7 @@ const Banner = ({ value, isLoading = true }) => {
                     <h1 className="banner-text text-center lhinit">
                         1 Unit&nbsp;<span id="lRate">{!isLoading ? `INR ${value.rate}` : <DotLoader/>}</span>
                     </h1>
-                    <div className='data'>{!isLoading ? `${value.name} | ${value.location}` : 'Loading'}</div>
+                    <div className='data'>{!isLoading ? `${value.name} | ${value.location}` : <DotLoader/>}</div>
                 </div>
             </div>
         </div>

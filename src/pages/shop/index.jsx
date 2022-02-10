@@ -6,6 +6,7 @@ import tabTitle from '../page';
 import { db } from "../../firebase/firebaseUtils";
 import { collection, getDocs } from 'firebase/firestore';
 import { nullShop } from '../../data';
+import { DotLoader } from '../../components/loader';
 
 function findShop(arr, value) {
     const element = arr.find((el) => {
@@ -75,7 +76,7 @@ const Shop = () => {
                         // if user visits without id in URL
                         // path: /shop
                         <div className='fl fl-c w100 h100'>Default Shop</div>
-                    ) : <div className='fl fl-c w100 h100vh'>Loading...</div>}
+                    ) : <div className='fl fl-c w100 h100vh'><DotLoader/></div>}
 
         </Container >
     );
