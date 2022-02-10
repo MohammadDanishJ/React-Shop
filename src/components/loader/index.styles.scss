@@ -1,6 +1,7 @@
 @import "../../styles/colors";
-.user-header {
-    margin: .2rem 0;
+.user-header,
+.dot-loader {
+    margin: 0.2rem 0;
 }
 
 .user-header .info {
@@ -43,11 +44,43 @@
     background: #e9ebec;
     border-radius: 4px;
 }
+.dot-loader .skeleton{
+    height: 30px;
+}
+
+.dot-loader .skeleton-1,
+.dot-loader .skeleton-2,
+.dot-loader .skeleton-3,
+.dot-loader .skeleton-4 {
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin: 0 3px 0 0;
+    background: #e9ebec;
+    border-radius: 50%;
+}
+
 .user-header .avatar-skeleton,
 .user-header .skeleton-1,
 .user-header .skeleton-2,
-.user-header .skeleton-3 {
+.user-header .skeleton-3,
+.dot-loader .skeleton-1,
+.dot-loader .skeleton-2,
+.dot-loader .skeleton-3,
+.dot-loader .skeleton-4 {
     animation: loading 1s infinite;
+}
+
+.dot-loader .skeleton-1 {
+    animation: DotLoading 1s infinite, loading 1s infinite;
+}
+.dot-loader .skeleton-2 {
+    animation: DotLoading 1s .2s infinite, loading 1s infinite;
+}
+.dot-loader .skeleton-3 {
+    animation: DotLoading 1s .5s infinite, loading 1s infinite;
+}.dot-loader .skeleton-4 {
+    animation: DotLoading 1s .7s infinite, loading 1s infinite;
 }
 
 @keyframes loading {
@@ -59,5 +92,17 @@
     }
     100% {
         background-color: $grey2;
+    }
+}
+
+@keyframes DotLoading {
+    0% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-5px);
     }
 }
