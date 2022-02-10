@@ -11,7 +11,7 @@ const Cart = () => {
         <Container>
       {isUser ? (
         <>
-          <div>Cart is empty for {currentUser.displayName}</div>
+          <div>Cart is empty for <strong>{currentUser.displayName || currentUser.email}</strong></div>
         </>
       ) : (
         <>

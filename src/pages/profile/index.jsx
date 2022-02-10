@@ -21,7 +21,7 @@ function Profile() {
     <Container>
       {isUser ? (
         <>
-          <div>User Found: {currentUser.displayName}</div>
+          <div>User Found: <strong>{currentUser.displayName || currentUser.email}</strong></div>
           <button className='log-out' onClick={handleSubmit}>Log Out</button>
         </>
       ) : (

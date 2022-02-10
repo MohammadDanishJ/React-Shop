@@ -12,7 +12,7 @@ const Notifications = () => {
         <Container>
             {isUser ? (
                 <>
-                    <div>No Notification for {currentUser.displayName}</div>
+                    <div>No Notification for <strong>{currentUser.displayName || currentUser.email}</strong></div>
                 </>
             ) : (
                 <>
