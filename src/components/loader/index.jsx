@@ -3,15 +3,13 @@ import './index.styles.scss';
 
 const UserLoader = () => {
     return (
-        <div className="fl fl-d-cl shop-container">
-            <div class="user-header animated">
-                <div class="skeleton">
-                    <div class="avatar-skeleton"></div>
-                    <div class="info-skeleton">
-                        <div class="skeleton-1"></div>
-                        <div class="skeleton-2"></div>
-                        <div class="skeleton-3"></div>
-                    </div>
+        <div className="user-header animated">
+            <div className="skeleton">
+                <div className="avatar-skeleton"></div>
+                <div className="info-skeleton">
+                    <div className="skeleton-1"></div>
+                    <div className="skeleton-2"></div>
+                    <div className="skeleton-3"></div>
                 </div>
             </div>
         </div>
