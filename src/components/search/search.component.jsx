@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import "./search.styles.scss";
 
 const Search = ({ placeholder, data }) => {
@@ -34,7 +35,7 @@ const Search = ({ placeholder, data }) => {
           (filteredData.length !== 0) ? (
             <div className='fl fl-d-cl w100'>
               {filteredData.slice(0, 20).map((value, key) => {
-                return <a className='w100 p12h' key={key} href={`/shop/${value.id}`}>{value.name}</a>
+                return <Link className='w100 p12h' key={key} to={`/shop/${value.name}`}>{value.name}</Link>
               })}
             </div>
           ) : (wordEntered.length === 0 ? '' :

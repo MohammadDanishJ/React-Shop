@@ -4,7 +4,7 @@ import Card from "../../components/card/card.component";
 import Container from "../../components/container/container.component";
 import tabTitle from "../page";
 import "../index.styles.scss";
-import { nullShop, shop } from "../../data";
+import { nullShop } from "../../data";
 import './index.styles.scss';
 import Search from "../../components/search/search.component";
 import Header from "../../components/header/header.component";
@@ -51,7 +51,7 @@ const Home = () => {
                 });
                 setMinShop(temp)
             } catch (e) {
-                
+
                 setMinShop(nullShop[0])
                 console.log(e)
             }
@@ -62,7 +62,7 @@ const Home = () => {
     return (
         <Container>
             <Header>
-                <Search placeholder='Search Shops, Products' data={shop}></Search>
+                <Search placeholder='Search Shops, Products' data={shopState}></Search>
             </Header>
             <Banner value={minShop} isLoading={isLoading} />
             {/* card for min shop */}
