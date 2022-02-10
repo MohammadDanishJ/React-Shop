@@ -24,12 +24,10 @@ const Header = ({ children }) => {
                 <div className='location fl fl-c fl-j-fs '>
                     {isUser ?
                         <>
-                        {console.log(currentUser.displayName || currentUser.email)}
                             <img src={location} alt="" />
                             <div className="deliver w100 lhinit">
-
                                 <div className="title">Deliver to</div>
-                                <div className="add">387 N Aliganj Lucknow</div>
+                                <div className="add">{currentUser.address || 'Add your address...'}</div>
                             </div>
                         </>
                         : <button className='login-google' onClick={handleSubmit}>Sign In</button>
