@@ -9,22 +9,22 @@ export const pages = [
     {
         title: 'Home',
         path: '/home',
-        icon: <img src={home} alt='Home Icon'/>,
+        icon: <img src={home} alt='Home Icon' />,
     },
     {
         title: 'Cart',
         path: '/cart',
-        icon: <img src={cart} alt='Cart Icon'/>,
+        icon: <img src={cart} alt='Cart Icon' />,
     },
     {
         title: 'Notifications',
         path: '/notifications',
-        icon: <img src={notification} alt='Notification Icon'/>,
+        icon: <img src={notification} alt='Notification Icon' />,
     },
     {
         title: 'Profile',
         path: '/profile',
-        icon: <img src={profile} alt='Profile Icon'/>,
+        icon: <img src={profile} alt='Profile Icon' />,
     },
 ]
 
@@ -58,3 +58,27 @@ export const nullShop = [{
     location: 'Offline',
     rate: '000'
 }];
+
+export const accountSettings = [
+    {
+        title: 'Update Profile',
+        subTitle: 'Change your profile information',
+        icon: 'profile-bg.svg',
+        path: '/profile/view'
+    }, {
+        title: 'Payment Method',
+        subTitle: 'Manage payments and cards',
+        icon: 'payment-bg.svg',
+        path: '/profile/manage-payments'
+    }, {
+        title: 'Address',
+        subTitle: 'Manage your delivery location',
+        icon: 'location-bg.svg',
+        path: '/profile/update-address'
+    }, {
+        title: 'Orders history',
+        subTitle: 'View your Orders history',
+        icon: 'history-bg.svg',
+        path: '/profile/orders'
+    },
+];
