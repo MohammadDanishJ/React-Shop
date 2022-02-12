@@ -10,7 +10,7 @@ import { DotLoader } from '../../components/loader';
 
 function findShop(arr, value) {
     const element = arr.find((el) => {
-        return el.shopId === value;
+        return el.shopId.toLowerCase() === value.toLowerCase();
     });
     return typeof element === "undefined" ? [false, false] : [true, element];
 }
