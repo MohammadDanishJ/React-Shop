@@ -38,8 +38,9 @@ const Cart = () => {
               item === 'history' &&
               <div className='pt1'>
                 <h1 className='text-center'>You don't have any orders</h1>
+                <div>Cart is empty for <strong>{currentUser.displayName || currentUser.email}</strong></div>
                 <div className="fl w100 pt1">
-                    <Link className='order-link fl fl-c p12 w100 h100' to='/home'>Order Now</Link>
+                  <Link className='order-link fl fl-c p12 w100 h100' to='/home'>Order Now</Link>
                 </div>
               </div>
             }
