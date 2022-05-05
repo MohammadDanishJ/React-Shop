@@ -17,15 +17,18 @@ const Header = ({ children}) => {
         navigate('/login')
     }
 
-    const toggleClass = () => {
+    const toggleClass = (e) => {
         setIsPaneOpen(!isPaneOpen);
-        console.log(isPaneOpen)
+    };
+
+    const closePane = (e) => {
+        if(e.target !== e.currentTarget) return;
+        setIsPaneOpen(!isPaneOpen);
     };
 
     return (
         <>
-            <div className="header">{
-                console.log(isPaneOpen)}
+            <div className="header">
                 <div className="main fl fl-j-sb">
                     <div className="logo fl fl-c" >
                         <div className="logoPrimary fl fl-c">Eg</div>
@@ -50,7 +53,7 @@ const Header = ({ children}) => {
 
             
             {/* sliding pane */}
-            <div className={isPaneOpen ? 'sliding-pane pfx t0 w100 h100 active' : 'sliding-pane pfx t0 w100 h100'} >
+            <div className={isPaneOpen ? 'sliding-pane pfx t0 w100 h100 active' : 'sliding-pane pfx t0 w100 h100'} onClick={closePane} >
                 <div className="pane">
                     {isPaneOpen ? <div className="closePane" onClick={toggleClass}><MdClose size={28} /></div> : null}
                     <div className="header">Your location</div>
