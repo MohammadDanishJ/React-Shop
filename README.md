@@ -1,2 +1,2 @@
 # S Shop
-https://egshop.herokuapp.com/
+https://egshop.netlify.app/
