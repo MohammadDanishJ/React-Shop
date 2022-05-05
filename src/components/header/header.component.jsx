@@ -50,7 +50,7 @@ const Header = ({ children}) => {
 
             
             {/* sliding pane */}
-            <div className={isPaneOpen ? 'sliding-pane pabs t0 w100 h100 active' : 'sliding-pane pabs t0 w100 h100'} >
+            <div className={isPaneOpen ? 'sliding-pane pfx t0 w100 h100 active' : 'sliding-pane pfx t0 w100 h100'} >
                 <div className="pane">
                     {isPaneOpen ? <div className="closePane" onClick={toggleClass}><MdClose size={28} /></div> : null}
                     <div className="header">Your location</div>
